@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dearest Elder Sister - Aakanksha Keshri</title>
+    <style>
+        /* Modern CSS Styles */
+        :root {
+            --primary-color: #ff6b8b;
+            --secondary-color: #ff8e9e;
+            --light-pink: #fff0f3;
+            --dark-text: #333;
+            --light-text: #fff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
+            line-height: 1.8;
+            background-color: #fff9fa;
+            color: var(--dark-text);
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--light-text);
+            text-align: center;
+            padding: 60px 20px 50px;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.1)" d="M0,0 L100,0 L100,100 L0,100 Z"></path></svg>');
+            opacity: 0.1;
+            z-index: 1;
+        }
+        
+        h1 {
+            font-size: 3.2rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            position: relative;
+            z-index: 2;
+            animation: fadeIn 1s ease;
+        }
+        
+        .subtitle {
+            font-size: 1.4rem;
+            font-style: italic;
+            opacity: 0.95;
+            position: relative;
+            z-index: 2;
+            animation: fadeIn 1.5s ease;
+        }
+        
+        /* Main Content Styles */
+        .main-image {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            display: block;
+            margin: 40px auto;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            border: 8px solid white;
+            transform: rotate(-2deg);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .main-image:hover {
+            transform: rotate(0deg) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        
+        .content-section {
+            background-color: white;
+            padding: 40px;
+            margin: 50px 0;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .content-section::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+        }
+        
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid #ffecec;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            font-size: 2rem;
+            position: relative;
+        }
+        
+        h2::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+        }
+        
+        p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        /* Qualities Grid */
+        .qualities-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .quality-item {
+            background-color: var(--light-pink);
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 5px solid var(--primary-color);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .quality-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(255,107,139,0.2);
+        }
+        
+        .quality-item h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .quality-item p {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .quality-item::before {
+            content: "♥";
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            font-size: 8rem;
+            color: rgba(255,142,158,0.1);
+            z-index: 0;
+        }
+        
+        /* Memories Section */
+        .memory {
+            background-color: var(--light-pink);
+            padding: 30px;
+            margin: 40px 0;
+            border-radius: 15px;
+            border-left: 5px solid var(--primary-color);
+            position: relative;
+        }
+        
+        .memory h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .memory h3::before {
+            content: "♥";
+            margin-right: 15px;
+            font-size: 1.8rem;
+        }
+        
+        /* Gallery Styles */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 50px 0;
+        }
+        
+        .gallery-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            height: 280px;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            color: white;
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+        
+        /* Footer Styles */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--light-text);
+            margin-top: 80px;
+            clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 100%);
+            position: relative;
+        }
+        
+        footer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.1)" d="M0,0 L100,0 L100,100 L0,100 Z"></path></svg>');
+            opacity: 0.2;
+            z-index: 1;
+        }
+        
+        .footer-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .heart {
+            color: #ffccd5;
+            font-size: 1.5rem;
+            animation: pulse 1.5s infinite;
+            display: inline-block;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+            100% { transform: scale(1); }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .content-section {
+                padding: 30px 20px;
+            }
+            
+            .qualities-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Aakanksha Keshri</h1>
+            <p class="subtitle">My guiding light, my first friend, my wonderful elder sister</p>
+        </div>
+    </header>
+    
+    <div class="container">
+    
+                <img src=https://plus.unsplash.com/premium_photo-1700346772426-0dba5c498741?q=80&w=1972&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D alt="Ananya Didi - My Amazing Sister" class="main-image">
+ 
+
+        
+        <div class="content-section">
+            <h2>My Forever Role Model</h2>
+            <p>From my earliest memories, Didi has been my compass in life. Being seven years older than me, she's always been ahead on the path, clearing obstacles before I even knew they existed. She's not just my sister - she's been my first teacher, my fiercest protector, and my most honest critic.</p>
+            
+            <p>I remember how she would patiently explain math problems to me after school, even when she had her own college assignments to complete. She's the reason I developed confidence in public speaking - she would make me practice speeches in front of her and gently correct my mistakes. Her belief in me has always been stronger than my own self-doubt.</p>
+        </div>
+        
+        <div class="content-section">
+            <h2>Why Didi Is Extraordinary</h2>
+            <p>These are just some of the countless qualities that make my sister the most remarkable person I know:</p>
+            
+            <div class="qualities-list">
+                <div class="quality-item">
+                    <h3>Selfless Love</h3>
+                    <p>Didi has always put my needs before hers. When I was sick with chickenpox at 10, she skipped her college fest to take care of me, reading me stories and applying calamine lotion with such tenderness.</p>
+                </div>
+                
+                <div class="quality-item">
+                    <h3>Unshakable Strength</h3>
+                    <p>When dad lost his job, didi quietly took up tutoring to help with expenses while still topping her university. She never complained, showing me what true resilience looks like.</p>
+                </div>
+                
+                <div class="quality-item">
+                    <h3>Infectious Positivity</h3>
+                    <p>Her ability to find joy in small things is magical. Even during tough times, she'd make us laugh with silly impressions or surprise me with handmade birthday cards.</p>
+                </div>
+                
+                <div class="quality-item">
+                    <h3>Boundless Wisdom</h3>
+                    <p>From career advice to relationship guidance, didi always knows what to say. Her perspective has saved me from countless mistakes over the years.</p>
+                </div>
+                
+                <div class="quality-item">
+                    <h3>Fierce Protection</h3>
+                    <p>When bullies targeted me in 8th grade, didi taught me how to stand up for myself and even walked to school with me for a week to ensure I felt safe.</p>
+                </div>
+                
+                <div class="quality-item">
+                    <h3>Grace Under Pressure</h3>
+                    <p>I've never seen her lose her composure. Even during family crises, she's the calm center that everyone relies on for stability and solutions.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2>Precious Memories</h2>
+            
+            <div class="memory">
+                <h3>Our Secret Language</h3>
+                <p>When I was 5 and didi was 12, we created our own secret sister language with funny words and gestures. We still use some of those codes today when we want to communicate something private in public. She made me feel so special by including me in this secret world only we shared.</p>
+            </div>
+            
+            <div class="memory">
+                <h3>Midnight Feasts</h3>
+                <p>During summer vacations, we'd wait until parents were asleep, then sneak to the kitchen to make Maggi at midnight. Didi would always let me stir the noodles even though I usually made a mess. We'd eat quietly in the balcony, whispering and giggling under the stars.</p>
+            </div>
+            
+            <div class="memory">
+                <h3>My Personal Fashion Stylist</h3>
+                <p>Before my first day at college, didi spent an entire afternoon helping me pick outfits, teaching me how to accessorize, and even doing my makeup. She wanted me to feel confident and prepared, just like she always made me feel.</p>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2>Through The Years</h2>
+            
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src=https://images.unsplash.com/photo-1621293121611-4a0d1f36dce3?q=80&w=1146&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D alt="Childhood photo" class="gallery-img">
+                    <div class="gallery-caption">Our childhood days - Didi always holding my hand</div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src=https://plus.unsplash.com/premium_photo-1677456380268-813e7a11bc57?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D alt="School days" class="gallery-img">
+                    <div class="gallery-caption">Didi helping me with school projects</div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src=https://plus.unsplash.com/premium_photo-1681755915253-f5bba9073ba7?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D alt="Graduation" class="gallery-img">
+                    <div class="gallery-caption">Her proud smile when my school completed</div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src=https://images.unsplash.com/photo-1504836054726-3e36882ddaf9?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D alt="Recent photo" class="gallery-img">
+                    <div class="gallery-caption">Still my favorite person after all these years</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2>Life Lessons From Didi</h2>
+            <blockquote>
+                "Be kind, but never let anyone mistake your kindness for weakness. Stand tall in your truth, and remember that no matter what happens, you'll always have me in your corner."
+            </blockquote>
+            <p>This advice from didi when I started my college has stayed with me through every challenge. She's given me countless such pearls of wisdom over the years - about trusting my instincts, valuing my self-worth, and never compromising my happiness for others' expectations.</p>
+            
+            <p>Her most profound lesson has been her silent teaching - showing through her actions how to balance strength with compassion, ambition with contentment, and independence with deep family bonds.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            <p style="font-size: 1.3rem; margin-bottom: 15px;">Sisters are like stars,you may not always see them,but you know they are always there.</p>
+            <p style="margin-bottom: 25px;">Created with love by your little sister <span class="heart">♥</span></p>
+            <p>&copy; 2025 | A Sister's Tribute</p>
+        </div>
+    </footer>
+</body>
+</html>
